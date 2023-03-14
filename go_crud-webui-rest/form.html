@@ -1,0 +1,12 @@
+{{define "content"}}
+<h1>{{.Title}}</h1>
+<form method="POST" action="{{if .User.ID}}/update/{{.User.ID}}{{else}}/create{{end}}">
+    {{if .User.ID}} ID: {{.User.ID}}<br /><br />
+    {{end}} Name:
+    <input type="text" name="name" value="{{.User.Name}}" /><br /><br />
+    Email:
+    <input type="email" name="email" value="{{.User.Email}}" /><br /><br />
+    <input type="submit" value="{{if .User.ID}}Update{{else}}Create{{end}}" />
+</form>
+<a href="/">Back to list of users</a>
+{{end}}

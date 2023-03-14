@@ -1,0 +1,25 @@
+{{define "content"}}
+<h1>{{.Title}}</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    {{range .Users}}
+    <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Email}}</td>
+        <td>
+            <a href="/edit/{{.ID}}">Edit</a> |
+            <a href="/delete/{{.ID}}">Delete</a>
+        </td>
+    </tr>
+    {{end}}
+    <tr>
+        <td colspan="4"><a href="/new">Add new user</a></td>
+    </tr>
+</table>
+{{end}}
